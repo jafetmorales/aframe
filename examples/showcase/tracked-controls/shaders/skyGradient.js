@@ -2,7 +2,7 @@
 AFRAME.registerShader('skyGradient', {
   schema: {
     colorTop: { type: 'color', default: 'black', is: 'uniform' },
-    colorBottom: { type: 'color', default: 'red', is: 'uniform' }
+    colorBottom: { type: 'color', default: 'green', is: 'uniform' }
   },
 
   vertexShader: [
