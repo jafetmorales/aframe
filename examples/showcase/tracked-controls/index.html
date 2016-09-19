@@ -20,6 +20,12 @@
                  material="color: #FFFFFF;"></a-mixin>
         <a-mixin id="cube-grabbed"
                  material="color: #FFFFFF;"></a-mixin>
+        <a-mixin id="flap" attribute="rotation" direction="alternate"
+                 repeat="indefinite"></a-mixin>
+        <a-mixin id="rotate" attribute="rotation" repeat="indefinite"></a-mixin>
+        <a-mixin id="wing" geometry="primitive: box; depth: .005; height: 1; width: 0.5"
+                 material="color: #9D0B28" rotation="0 0 0"
+                 pivot="0.25 0 0" scale="1 1.25 1"></a-mixin>
       </a-assets>
       <!-- Hands -->
       <a-entity hand-controls="left" aabb-collider="objects: .cube;" grab></a-entity>
@@ -46,6 +52,24 @@
         <a-entity class="cube" mixin="cube" position="-0.60 0.75 0"></a-entity>
         <a-entity class="cube" mixin="cube" position="-0.60 0.45 0"></a-entity>
         <a-entity class="cube" mixin="cube" position="-0.60 0.15 0"></a-entity>
+
+        <!-- Butterfly with pivoting wings. -->
+        <a-entity position="0.30 5 0">
+         <a-animation mixin="rotate" to="0 45 0" dur="3000" easing="linear"></a-animation>
+<!--  <a-animation attribute="position" from="1 1 1" to="2 4 -8"></a-animation>-->
+          <a-entity rotation="0 90 0" position="2.5 0 0">
+            <a-entity rotation="-45 0 90">
+              <a-entity mixin="wing">
+                <a-animation mixin="flap" to="0 120 0"></a-animation>
+              </a-entity>
+            </a-entity>
+            <a-entity rotation="-45 0 90">
+              <a-entity mixin="wing">
+                <a-animation mixin="flap" to="0 -120 0"></a-animation>
+              </a-entity>
+            </a-entity>
+          </a-entity>
+        </a-entity>
 
         <!-- Environment -->
         <a-entity id="sky"
