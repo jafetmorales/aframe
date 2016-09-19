@@ -36,6 +36,7 @@
     "deep-assign": "^2.0.0",
     "document-register-element": "dmarcos/document-register-element#8ccc532b7",
     "object-assign": "^4.0.1",
+    "popmotion-adapter-aframe": "^5.0.3",
     "present": "0.0.6",
     "promise-polyfill": "^3.1.0",
     "style-attr": "^1.0.2",
